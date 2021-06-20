@@ -3,7 +3,7 @@
   "short_name": "My App",
   "description": "What it does!",
   "lang": "en-US",
-  "start_url": "https://dgranjon.shinyapps.io/shinyMobileGolemTest/www/",
+  "start_url": "https://dgranjon.shinyapps.io/shinyMobileGolemTest/",
   "display": "minimal-ui",
   "background_color": "#ffffff",
   "theme_color": "#ffffff",
