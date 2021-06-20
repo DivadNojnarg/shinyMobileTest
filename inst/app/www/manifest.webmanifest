@@ -4,7 +4,6 @@
   "description": "What it does!",
   "lang": "en-US",
   "start_url": "https://dgranjon.shinyapps.io/shinyMobileGolemTest/",
-  "scope": "/",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#ffffff",
