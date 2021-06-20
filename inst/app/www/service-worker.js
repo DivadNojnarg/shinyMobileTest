@@ -12,11 +12,11 @@ self.addEventListener('install', function(e) {
       // If the request for any of these resources fails, _none_ of the resources will be
       // added to the cache.
       return cache.addAll([
-        'offline.html',
-        'manifest.webmanifest',
+        'www/offline.html'//,
+        //'manifest.webmanifest'//,
         // The 2 below work well ...
-        'framework7-5.7.14/css/framework7.bundle.min.css',
-        'framework7-5.7.14/js/framework7.bundle.min.js'
+        //'framework7-5.7.14/css/framework7.bundle.min.css',
+        //'framework7-5.7.14/js/framework7.bundle.min.js'
       ]);
     })
   );
