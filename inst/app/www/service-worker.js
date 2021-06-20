@@ -12,8 +12,7 @@ self.addEventListener('install', function(e) {
       // If the request for any of these resources fails, _none_ of the resources will be
       // added to the cache.
       return cache.addAll([
-        '/',
-        'offline.html',
+        //'www/offline.html',
         //'/manifest.webmanifest',
         'https://cdn.jsdelivr.net/npm/framework7@5.7.14/css/framework7.bundle.min.css',
         'https://cdn.jsdelivr.net/npm/framework7@5.7.14/js/framework7.bundle.min.js'
