@@ -13,8 +13,8 @@ self.addEventListener('install', function(e) {
       // added to the cache.
       return cache.addAll([
         '/',
-        '/offline.html',
-        '/manifest.webmanifest',
+        'offline.html',
+        //'/manifest.webmanifest',
         'https://cdn.jsdelivr.net/npm/framework7@5.7.14/css/framework7.bundle.min.css',
         'https://cdn.jsdelivr.net/npm/framework7@5.7.14/js/framework7.bundle.min.js'
       ]);
