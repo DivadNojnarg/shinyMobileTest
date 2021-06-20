@@ -57,6 +57,6 @@ self.addEventListener('fetch', function(e) {
     // check if this file exists in the cache
     caches.match(e.request)
       // Return the cached file, or else try to get it from the server
-      .then(response => response || fetch(e.request))
+      .then(response => response)
   );
 });
