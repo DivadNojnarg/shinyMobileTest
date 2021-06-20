@@ -2,12 +2,12 @@
 #'
 #' shinyMobile tabs layout template
 #'
-#' @param request Internal parameter for `{shiny}`.
+# #' @param request Internal parameter for `{shiny}`.
 #'     DO NOT REMOVE.
 #' @import shiny
 #' @import shinyMobile
 #' @noRd
-app_ui <- function(request) {
+app_ui <- function() {
   tagList(
     # Leave this function for adding external resources
     golem_add_external_resources(),
@@ -116,7 +116,7 @@ golem_add_external_resources <- function() {
   #  "www", app_sys("app/www")
   #)
 
-  tags$head(
+  #tags$head(
     #favicon(),
     #bundle_resources(
     #  path = app_sys("app/www/golem"),
@@ -124,5 +124,5 @@ golem_add_external_resources <- function() {
     #)
     # Add here other external resources
     # for example, you can add shinyalert::useShinyalert()
-  )
+  #)
 }
