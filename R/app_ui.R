@@ -14,7 +14,7 @@ app_ui <- function(request) {
     f7Page(
       allowPWA = TRUE,
       options = list(
-        theme = c("ios", "md", "auto", "aurora"),
+        theme = "auto",
         dark = TRUE,
         filled = FALSE,
         color = "#007aff",
@@ -108,9 +108,9 @@ app_ui <- function(request) {
 #' @importFrom golem add_resource_path activate_js favicon bundle_resources
 #' @noRd
 golem_add_external_resources <- function() {
-  add_resource_path(
-    "golem", app_sys("app/www/golem")
-  )
+  # add_resource_path(
+  #  "golem", app_sys("app/www/golem")
+  # )
 
   add_resource_path(
     "www", app_sys("app/www")
