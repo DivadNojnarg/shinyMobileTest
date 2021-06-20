@@ -13,10 +13,10 @@ self.addEventListener('install', function(e) {
       // added to the cache.
       return cache.addAll([
         'offline.html',
-        'manifest.webmanifest',
+        'manifest.webmanifest'//,
         // The 2 below work well ...
-        'framework7-5.7.14/css/framework7.bundle.min.css',
-        'framework7-5.7.14/js/framework7.bundle.min.js'
+        //'/www/framework7-5.7.14/css/framework7.bundle.min.css',
+        //'/www/framework7-5.7.14/js/framework7.bundle.min.js'
       ]);
     })
   );
