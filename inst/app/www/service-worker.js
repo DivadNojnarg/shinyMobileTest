@@ -15,8 +15,8 @@ self.addEventListener('install', function(e) {
         'offline.html',
         'manifest.webmanifest',
         // The 2 below work well ...
-        'https://cdn.jsdelivr.net/npm/framework7@5.7.14/css/framework7.bundle.min.css',
-        'https://cdn.jsdelivr.net/npm/framework7@5.7.14/js/framework7.bundle.min.js'
+        'framework7-5.7.14/css/framework7.bundle.min.css',
+        'framework7-5.7.14/js/framework7.bundle.min.js'
       ]);
     })
   );
