@@ -85,6 +85,13 @@ self.addEventListener("fetch", (event) => {
         const cache = await caches.open(CACHE_NAME);
         const cachedResponse = await cache.match(event.request);
         if (cachedResponse) return cachedResponse;
+        
+        const response = await fetch(event.request);
+
+        if (!response || response.status !== 200 || response.type !== 'basic') {
+          return response;
+        }
+        
       })()
     );
   }
