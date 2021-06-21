@@ -80,6 +80,15 @@ self.addEventListener("fetch", (event) => {
         }
       })()
     );
+  } else {
+    // also serve other cached assets (not a navigation request)
+    event.respondWith(
+      (async () => {
+        const cache = await caches.open(CACHE_NAME);
+        const cachedResponse = await cache.match(event.request);
+        return cachedResponse;
+      })()
+    );
   }
 
   // If our if() condition is false, then this fetch handler won't intercept the
