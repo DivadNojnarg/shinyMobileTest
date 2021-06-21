@@ -87,11 +87,7 @@ self.addEventListener("fetch", (event) => {
         if (cachedResponse) return cachedResponse;
         
         const response = await fetch(event.request);
-
-        if (!response || response.status !== 200 || response.type !== 'basic') {
-          return response;
-        }
-        
+        return response;
       })()
     );
   }
