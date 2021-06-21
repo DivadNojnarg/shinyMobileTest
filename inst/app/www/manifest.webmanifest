@@ -12,5 +12,14 @@
       "src": "icons/icon-144.png",
       "sizes": "144x144"
     }
+  ],
+  "shortcuts": [
+    {
+      "name": "Shortcut",
+      "short_name": "Shortcut",
+      "description": "Do something",
+      "url": "?foo=1",
+      "icons": [{ "src": "icons/play-later.png", "sizes": "192x192" }]
+    }
   ]
 }
