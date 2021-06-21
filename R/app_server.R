@@ -10,7 +10,7 @@ app_server <- function( input, output, session ) {
   
   observeEvent(session$clientData$url_search, {
     query <- parseQueryString(session$clientData$url_search)
-    
+    req(length(query) > 0)
     # Ways of accessing the values
     if (as.numeric(query$foo) == 1) {
       f7Toast(text = "Plop")
