@@ -50,6 +50,10 @@ self.addEventListener("activate", (event) => {
 });
 
 self.addEventListener("fetch", (event) => {
+  
+  // Fix service-worker bug: https://github.com/sveltejs/sapper-template/blob/7e028c825d46f3e633d0378d4d952c9bb1f61068/app/service-worker.js#L61
+  if (event.request.cache === 'only-if-cached') return;
+  
   // We only want to call event.respondWith() if this is a navigation request
   // for an HTML page.
   if (event.request.mode === "navigate") {
@@ -82,12 +86,19 @@ self.addEventListener("fetch", (event) => {
     // also serve other cached assets (not a navigation request)
     event.respondWith(
       (async () => {
-        const cache = await caches.open(CACHE_NAME);
-        const cachedResponse = await cache.match(event.request);
-        if (cachedResponse) return cachedResponse;
         
-        const response = await fetch(event.request);
-        return response;
+        try {
+          // Always try the network first.
+          const networkResponse = await fetch(event.request);
+          return networkResponse;
+          
+        } catch (error) {
+          
+          const cache = await caches.open(CACHE_NAME);
+          const cachedResponse = await cache.match(event.request);
+          if (cachedResponse) return cachedResponse;
+          
+        }
       })()
     );
   }
