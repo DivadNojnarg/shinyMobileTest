@@ -74,7 +74,9 @@ self.addEventListener("fetch", (event) => {
 
           const cache = await caches.open(CACHE_NAME);
           const cachedResponse = await cache.match(OFFLINE_URL);
-          return cachedResponse;
+          if (cachedResponse) return cachedResponse;
+          // If we didn't find a match in the cache, use the network.
+          return fetch(event.request);
         }
       })()
     );
