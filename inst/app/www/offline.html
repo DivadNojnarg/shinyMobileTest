@@ -41,14 +41,19 @@
 
           <!-- Scrollable page content -->
           <div class="page-content">
-            <p>Welcome to the offline page</p>
+            <div class="block">
+              <p>Welcome to the offline page</p>
+              <button onclick="location.reload();" class="toast-button button color-red col">Reload</button>
+            </div>
           </div>
         </div>
       </div>
     </div>
-    <!-- Path to Framework7 Library Bundle JS-->
+    <!-- jQuery -->
+    <script type="text/javascript" src="shared/jquery.min.js"></script>
+    <!-- Path to Framework7 Library Bundle JS -->
     <script type="text/javascript" src="framework7-5.7.14/js/framework7.bundle.min.js"></script>
-    <!-- Path to your app js-->
+    <!-- Path to your app js -->
     <script>
       var app = new Framework7({
         // App root element
@@ -61,10 +66,18 @@
         panel: {
           swipe: true,
         },
+        autoDarkTheme: true,
         // ... other parameters
       });
 
       var mainView = app.views.create('.view-main');
+      
+      if (Framework7.device.standalone) {
+        $("html, body").css({ height: "100vh", width: "100vw" });
+        if ($(".appbar").length > 0) {
+          $(".toolbar").css("margin-bottom", "20px");
+        }
+      }
     </script>
   </body>
 </html>
