@@ -15,11 +15,11 @@
   ],
   "shortcuts": [
     {
-      "name": "Shortcut",
+      "name": "Open toast",
       "short_name": "Shortcut",
       "description": "Do something",
-      "url": "?foo=1",
-      "icons": [{ "src": "icons/play-later.png", "sizes": "192x192" }]
+      "url": "https://dgranjon.shinyapps.io/shinyMobileGolemTest/?foo=1",
+      "icons": [{ "src": "icons/shortcut.png", "sizes": "192x192" }]
     }
   ]
 }
