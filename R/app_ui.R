@@ -116,7 +116,22 @@ golem_add_external_resources <- function() {
   #  "www", app_sys("app/www")
   #)
 
-  #tags$head(
+  tags$head(
+    # added hotjar
+    HTML(
+      "<!-- Hotjar Tracking Code for https://dgranjon.shinyapps.io/shinymobilegolemtest -->
+      <script>
+          (function(h,o,t,j,a,r){
+              h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+              h._hjSettings={hjid:2481595,hjsv:6};
+              a=o.getElementsByTagName('head')[0];
+              r=o.createElement('script');r.async=1;
+              r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+              a.appendChild(r);
+          })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+      </script>
+      "
+    )
     #favicon(),
     #bundle_resources(
     #  path = app_sys("app/www/golem"),
@@ -124,5 +139,5 @@ golem_add_external_resources <- function() {
     #)
     # Add here other external resources
     # for example, you can add shinyalert::useShinyalert()
-  #)
+  )
 }
