@@ -119,7 +119,7 @@ golem_add_external_resources <- function() {
   tags$head(
     # added hotjar
     HTML(
-      "<!-- Hotjar Tracking Code for https://dgranjon.shinyapps.io/shinymobilegolemtest -->
+      "<!-- Hotjar Tracking Code for https://dgranjon.shinyapps.io/shinyMobileGolemTest -->
       <script>
           (function(h,o,t,j,a,r){
               h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
