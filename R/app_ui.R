@@ -6,6 +6,7 @@
 #'     DO NOT REMOVE.
 #' @import shiny
 #' @import shinyMobile
+#' @import echarts4r
 #' @noRd
 app_ui <- function(request) {
   tagList(
@@ -62,26 +63,34 @@ app_ui <- function(request) {
             tabName = "Tab 1",
             icon = f7Icon("folder"),
             active = TRUE,
-            f7Stepper(
-              inputId = "stepper",
-              label = "My stepper",
-              min = 0,
-              max = 10,
-              size = "small",
-              value = 4,
-              wraps = TRUE,
-              autorepeat = TRUE,
-              rounded = FALSE,
-              raised = FALSE,
-              manual = FALSE
-            ),
-            verbatimTextOutput("val")
+            f7Block(
+              f7Slider(
+                inputId = "obs",
+                label = "Number of observations",
+                max = 1000,
+                min = 0,
+                value = 100,
+                scaleSteps = 5,
+                scaleSubSteps = 3,
+                scale = TRUE,
+                color = "orange",
+                labels = tagList(
+                  f7Icon("circle"),
+                  f7Icon("circle_fill")
+                )
+              ),
+              plotOutput("distPlot")
+            )
           ),
           f7Tab(
             tabName = "Tab 2",
             icon = f7Icon("keyboard"),
             active = FALSE,
-            "Tab 2"
+            f7Block(
+              strong = TRUE,
+              echarts4rOutput("riverChart"),
+              inset = TRUE
+            )
           ),
           f7Tab(
             tabName = "Tab 3",
