@@ -59,6 +59,7 @@ app_ui <- function(request) {
         ),
         f7Tabs(
           animated = TRUE,
+          id = "tabs",
           f7Tab(
             tabName = "Tab 1",
             icon = f7Icon("folder"),

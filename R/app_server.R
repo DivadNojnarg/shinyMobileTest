@@ -20,6 +20,11 @@ app_server <- function( input, output, session ) {
     }
   })
   
+  # change url for hotjar heatmaps
+  observeEvent(input$tabs, {
+    updateQueryString(paste0("#",input$tabs), mode = "push")
+  })
+  
   # date for echarts4r
   dates <- seq.Date(Sys.Date() - 30, Sys.Date(), by = "day")
   
